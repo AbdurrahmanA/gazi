@@ -115,3 +115,51 @@ void main()
 }
 */
 
+/*
+
+#include <stdio.h>
+
+void main()
+{
+
+   char tip;
+   int mesafe, gun;
+   float ucret;
+
+   printf("Araba tercihinizi giriniz:\nArazi(A)\nBinek(B)\nStatition(S)\nSpor(P)\n");
+   scanf("%c", &tip);
+
+   printf("Kullandiginiz gun sayisini giriniz: ");
+   scanf("%d", &gun);
+
+   printf("Gittiginiz mesafeyi giriniz: ");
+   scanf("%d", &mesafe);
+
+   switch (tip)
+   {
+   case 'A':;
+   case 'a':
+      ucret = mesafe * 18 + gun * 20;
+      break;
+
+   case 'B':;
+   case 'b':
+      ucret = mesafe * 22 + gun * 32;
+      break;
+   case 'S':;
+   case 's':
+      ucret = mesafe * 28 + gun * 43;
+      break;
+   case 'P':;
+   case 'p':
+      ucret = mesafe * 36 + gun * 51;
+      break;
+   default:
+      printf("Gecerli bir deger giriniz");
+      break;
+   }
+   printf("Odemeniz gereken tutar: %.2f TL", ucret);
+}
+}
+
+*/

@@ -222,4 +222,166 @@ void main()
    }
 }
 */
+/*
+#include <stdio.h>
 
+void main()
+{
+
+   char tip;
+   int mesafe, gun;
+   float ucret;
+
+   printf("Araba tercihinizi giriniz:\nArazi(A)\nBinek(B)\nStatition(S)\nSpor(P)\n");
+   scanf("%c", &tip);
+
+   printf("Kullandiginiz gun sayisini giriniz: ");
+   scanf("%d", &gun);
+
+   printf("Gittiginiz mesafeyi giriniz: ");
+   scanf("%d", &mesafe);
+
+   switch (tip)
+   {
+   case 'A':;
+   case 'a':
+      ucret = mesafe * 18 + gun * 20;
+      break;
+
+   case 'B':;
+   case 'b':
+      ucret = mesafe * 22 + gun * 32;
+      break;
+   case 'S':;
+   case 's':
+      ucret = mesafe * 28 + gun * 43;
+      break;
+   case 'P':;
+   case 'p':
+      ucret = mesafe * 36 + gun * 51;
+      break;
+   default:
+      printf("Gecerli bir deger giriniz");
+      break;
+   }
+   printf("Odemeniz gereken tutar: %.2f TL", ucret);
+}
+
+*/
+
+#include <stdio.h>
+
+void main()
+{
+
+   int kod;
+   int RenaultKod = 0, MazdaKod = 0, HondaKod = 0, FordKod = 0;
+   float ucret, RenaultUcret = 0, MazdaUcret = 0, HondaUcret = 0, FordUcret = 0;
+
+   do
+   {
+      printf("Arac kodunu giriniz: Renault(1), Mazda(2), Honda(3), Ford(4) \n");
+      printf("Almak istediginiz benzin ucretini giriniz: ");
+      scanf("%d %f", &kod, &ucret);
+
+      switch (kod)
+      {
+      case 1:
+         RenaultKod++;
+         RenaultUcret += ucret;
+         break;
+      case 2:
+         MazdaKod++;
+         MazdaUcret += ucret;
+         break;
+      case 3:
+         HondaKod++;
+         HondaUcret += ucret;
+         break;
+      case 4:
+         FordKod++;
+         FordUcret += ucret;
+         break;
+
+      default:
+         break;
+      }
+
+   } while (kod != 111)
+   ;
+
+   int enbuyukkod = RenaultKod, i = 1;
+
+   if (MazdaKod > enbuyukkod)
+   {
+      enbuyukkod = MazdaKod;
+      i = 2;
+   }
+   if (HondaKod > enbuyukkod)
+   {
+      enbuyukkod = HondaKod;
+      i = 3;
+   }
+   if (FordKod > enbuyukkod)
+   {
+      enbuyukkod = FordKod;
+      i = 4;
+   }
+
+   printf("En cok gelen arac ");
+
+   switch (i)
+   {
+   case 1:
+      printf("Renault (%d)", RenaultKod);
+      break;
+   case 2:
+      printf("Mazda (%d)", MazdaKod);
+      break;
+   case 3:
+      printf("Honda (%d)", HondaKod);
+      break;
+   case 4:
+      printf("Ford (%d)", FordKod);
+      break;
+   }
+
+
+   float encokpara = RenaultUcret;
+   int j = 1;
+
+   if (MazdaUcret > encokpara)
+   {
+      encokpara = MazdaUcret;
+      j = 2;
+   }
+   if (HondaUcret > encokpara)
+   {
+      encokpara = HondaUcret;
+      j = 3;
+   }
+   if (FordUcret > encokpara)
+   {
+      encokpara = FordUcret;
+      j = 4;
+   }
+
+   printf("\nEn cok yakit alan arac ");
+
+   switch (j)
+   {
+   case 1:
+      printf("Renault (%.3f)", RenaultUcret);
+      break;
+   case 2:
+      printf("Mazda (%.3f)", MazdaUcret);
+      break;
+   case 3:
+      printf("Honda (%.3f)", HondaUcret);
+      break;
+   case 4:
+      printf("Ford (%.3f)", FordUcret);
+      break;
+   }
+
+}
