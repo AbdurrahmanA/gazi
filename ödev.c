@@ -115,3 +115,6 @@ void main()
 }
 */
 
+
+
+// Bişeyler deniyom knk
